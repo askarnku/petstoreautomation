@@ -2,6 +2,8 @@ package api.test;
 
 import java.util.Random;
 
+import org.testng.Assert;
+
 import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -38,7 +40,7 @@ public class OrderTests {
 	public void testPostOrder() {
 		Response response = OrderEndPoints.createOrder(order);
 		response.then().log().all();
-		AssertJUnit.assertEquals(response.getStatusCode(), 200);
+		Assert.assertEquals(response.getStatusCode(), 200);
 		System.out.println("Printing ------- response body here: ");
 		System.out.println(response.body().asString());
 	}
