@@ -3,8 +3,6 @@ package api.test;
 import java.util.Random;
 
 import org.testng.Assert;
-
-import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -49,7 +47,7 @@ public class OrderTests {
 	public void testGetOrder() {
 		Response response = OrderEndPoints.readOrder(order.getId());
 		response.then().log().all();
-		AssertJUnit.assertEquals(response.getStatusCode(), 200);
+		Assert.assertEquals(response.getStatusCode(), 200);
 		System.out.println("Printing ------- GET response body here: ");
 		System.out.println(response.body().asString());
 	}
