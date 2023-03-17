@@ -2,4 +2,7 @@
 /target
 Reports/*
 !Reports/.gitkeep
-
+.idea
+.settings
+.project
+.classpath
